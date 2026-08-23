@@ -1,10 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <MSBuildWarningsAsMessages>MSB3246</MSBuildWarningsAsMessages>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>6bf285d6-3d58-4c21-851c-3127afef0ad7</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
