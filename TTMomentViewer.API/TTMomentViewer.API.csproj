@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <MSBuildWarningsAsMessages>MSB3246</MSBuildWarningsAsMessages>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.6" />
+    <PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="7.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TTMomentViewer.BLL\TTMomentViewer.BLL.csproj" />
+    <ProjectReference Include="..\TTMomentViewer.Domain\TTMomentViewer.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

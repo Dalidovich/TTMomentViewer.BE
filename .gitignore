@@ -1,0 +1,11 @@
+[Bb]in/
+[Oo]bj/
+.vs/
+*.user
+*.suo
+*.userprefs
+[Dd]ebug/
+[Rr]elease/
+[Ll]ogs/
+*.log
+.idea/
