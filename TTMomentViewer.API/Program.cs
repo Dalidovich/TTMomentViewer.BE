@@ -1,4 +1,4 @@
-using Serilog;
+﻿using Serilog;
 using TTMomentViewer.API.BackgroundServices;
 using TTMomentViewer.API.Middleware;
 using TTMomentViewer.BLL.Interfaces;
@@ -58,7 +58,28 @@ public class Program
 
             app.UseAuthorization();
 
+            var wwwrootPath = Path.Combine(AppContext.BaseDirectory, "wwwroot");
+            var hasSpa = Directory.Exists(wwwrootPath);
+
+            if (hasSpa)
+            {
+                app.UseDefaultFiles();
+                app.UseStaticFiles();
+            }
+
             app.MapControllers();
+
+            if (hasSpa)
+            {
+                app.MapWhen(
+                    context => !context.Request.Path.StartsWithSegments("/api"),
+                    spa => spa.Run(async context =>
+                    {
+                        context.Response.ContentType = "text/html";
+                        await context.Response.SendFileAsync(
+                            Path.Combine(app.Environment.WebRootPath, "index.html"));
+                    }));
+            }
 
             Log.Information("Application starting");
             app.Run();
