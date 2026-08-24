@@ -6,7 +6,12 @@
     <MSBuildWarningsAsMessages>MSB3246</MSBuildWarningsAsMessages>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>6bf285d6-3d58-4c21-851c-3127afef0ad7</UserSecretsId>
+    <ApplicationIcon>app-icon.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="app-icon.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.6" />
