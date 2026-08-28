@@ -53,6 +53,7 @@ public class LibraryScanner : ILibraryScanner
         }
 
         var fileNames = new List<string>();
+        var sizesByFileName = new Dictionary<string, long>(StringComparer.OrdinalIgnoreCase);
 
         foreach (var filePath in Directory.EnumerateFiles(directoryPath))
         {
@@ -65,6 +66,7 @@ public class LibraryScanner : ILibraryScanner
             }
 
             fileNames.Add(fileName);
+            sizesByFileName[fileName] = new FileInfo(filePath).Length;
         }
 
         if (fileNames.Count == 0) return null;
@@ -89,7 +91,8 @@ public class LibraryScanner : ILibraryScanner
                 FolderName = folderName,
                 Name = Path.GetFileNameWithoutExtension(fileNames[index]),
                 RelativePath = relativePath,
-                Index = index
+                Index = index,
+                SizeBytes = sizesByFileName[fileNames[index]]
             });
         }
 

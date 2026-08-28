@@ -13,4 +13,6 @@ public class Moment
     public string RelativePath { get; set; } = string.Empty;
 
     public int Index { get; set; }
+
+    public long SizeBytes { get; set; }
 }

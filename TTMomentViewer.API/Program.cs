@@ -33,6 +33,7 @@ public class Program
             builder.Services.AddScoped<IFolderService, FolderService>();
             builder.Services.AddScoped<IMomentService, MomentService>();
             builder.Services.AddScoped<IFeedService, FeedService>();
+            builder.Services.AddScoped<ILibraryService, LibraryService>();
             builder.Services.AddHostedService<LibraryScanService>();
 
             builder.Services.AddCors(options =>
